@@ -1,5 +1,11 @@
 
 
 # Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
-
+- Only allow SSH from AWS System Manager.
+- Put Ec2 instances into private subnet.
+- Modify security group inbound rules.
+- Setup AWS GuardDuty to detect attacks.
 # Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+- Limit S3 permission of 2 EC2 instances.
+- Use both client-side and server-side encryption.
+- 

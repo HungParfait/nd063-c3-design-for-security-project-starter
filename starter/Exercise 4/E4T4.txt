@@ -1,8 +1,14 @@
 
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- Put 2 EC2 instances into private subnet.
+- Set up AWS WAF to detect potential attack.
+- Setup Gateway Endpoint to provide private access to S3 bucket.
 
 # Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+No. VPC private endpoints is a solution to privide private connection to S3 so it doesn't help resolve insecure IAM permissions.  
 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+Now, all data will be default encrypted when uploaded to S3. But before, default encryption is not appylied for already exists data.
 
 # What would happen if the original cloud formation templates are applied to this environment.
+There will be potential attacks to this environment. 
